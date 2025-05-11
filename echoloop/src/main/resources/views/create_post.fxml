@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.CreatePostController"
+            stylesheets="@frontpostcss.css">
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: transparent;">
+            <content>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <!-- Post Creation Box -->
+                    <VBox spacing="10" styleClass="create-post">
+                        <Label text="Create Your Post" styleClass="username" style="-fx-font-size: 18px;"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="descriptionField" promptText="What's on your mind?" HBox.hgrow="ALWAYS"/>
+                            <Button fx:id="submitButton" text="Create" onAction="#handleSubmitPost" styleClass="primary-btn"/>
+                        </HBox>
+                        <HBox spacing="10">
+                            <Button fx:id="photoButton" text="📷 Add Photo" onAction="#handleChooseImage" styleClass="secondary-btn"/>
+                        </HBox>
+                        <ImageView fx:id="imagePreview" fitWidth="300" fitHeight="200" preserveRatio="true"/>
+                        <Label fx:id="statusLabel" textFill="green"/>
+                    </VBox>
+
+                    <!-- Posts Display -->
+                    <VBox fx:id="postsContainer" spacing="20"/>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

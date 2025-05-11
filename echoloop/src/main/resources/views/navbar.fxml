@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<?import java.net.URL?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.NavbarController">
+    <stylesheets>
+        <URL value="@navbar.css" />
+    </stylesheets>
+
+    <HBox fx:id="navbar" spacing="10" alignment="CENTER_LEFT" styleClass="navbar">
+        <Button fx:id="homeBtn" text="Users" onAction="#handleHome" styleClass="nav-button"/>
+        <Button fx:id="profileBtn" text="Posts" onAction="#handleProfile" styleClass="nav-button"/>
+        <Button fx:id="voiceBtn" text="Voice Comments" onAction="#voice" styleClass="nav-button"/>
+        <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout" styleClass="nav-button"/>
+    </HBox>
+</AnchorPane>

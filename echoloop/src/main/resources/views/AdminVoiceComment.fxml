@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" stylesheets="@Voice.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminVoiceCommentController">
+    <top>
+        <VBox>
+            <children>
+                <fx:include source="navbar.fxml"/>
+                <VBox spacing="10.0" styleClass="header-panel">
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="header-label" text="Voice Comments Management">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <TextField fx:id="searchField" prefHeight="30.0" prefWidth="250.0" promptText="Search..." />
+                                <ComboBox fx:id="filterComboBox" prefHeight="30.0" prefWidth="150.0" />
+                                <Button mnemonicParsing="false" onAction="#handleSearch" prefHeight="30.0" styleClass="search-button" text="Search" />
+                                <Button mnemonicParsing="false" onAction="#handleClear" prefHeight="30.0" styleClass="clear-button" text="Clear" />
+                                <Region HBox.hgrow="ALWAYS" />
+                                <Button mnemonicParsing="false" onAction="#handleRefresh" prefHeight="30.0" styleClass="refresh-button" text="Refresh" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="5.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+            <children>
+                <TableView fx:id="voiceCommentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="userColumn" prefWidth="100.0" text="User" />
+                        <TableColumn fx:id="postColumn" prefWidth="100.0" text="Post" />
+                        <TableColumn fx:id="dateColumn" prefWidth="140.0" text="Created Date" />
+                        <TableColumn fx:id="audioPathColumn" prefWidth="200.0" text="Audio Path" />
+                        <TableColumn fx:id="actionsColumn" prefWidth="200.0" text="Actions" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="footer-panel" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+            <children>
+                <Label fx:id="totalCommentsLabel" text="Total Comments: 0" />
+                <Label fx:id="filteredCommentsLabel" text="Showing: 0" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="statusLabel" styleClass="status-label" text="Ready" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

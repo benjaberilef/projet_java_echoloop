@@ -1,0 +1,328 @@
+/* Main application styling */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+    -fx-font-family: 'Segoe UI', 'Roboto', sans-serif;
+    -fx-padding: 18px;
+}
+
+/* ==================== TableView Styling ==================== */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-table-cell-border-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 12, 0, 0, 4);
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+.table-view .placeholder {
+    -fx-background-color: white;
+}
+
+/* Remove vertical and horizontal lines in table */
+.table-view .column-header-background .filler,
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+/* Table header styling */
+.table-view .column-header-background {
+    -fx-background-color: white;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-padding: 0 0 10px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #e0e0e0;
+    -fx-padding: 16px 12px 12px 12px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #495057;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-alignment: center-left;
+    -fx-text-transform: uppercase;
+    -fx-font-family: 'Segoe UI Semibold', 'Roboto Medium', sans-serif;
+}
+
+/* Table row styling */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-cell-size: 48px;
+    -fx-background-insets: 0;
+    -fx-padding: 2px 0;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9fbfc;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #edf6ff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e1f0ff;
+    -fx-text-fill: #333333;
+    -fx-border-width: 0 0 0 4px;
+    -fx-border-color: #3498db;
+}
+
+/* Table cell styling */
+.table-cell {
+    -fx-alignment: center-left;
+    -fx-padding: 8px 16px;
+    -fx-border-color: transparent;
+    -fx-text-fill: #495057;
+    -fx-font-size: 13px;
+}
+
+/* Customize scrollbars */
+.scroll-bar:horizontal,
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #d0d0d0;
+    -fx-background-radius: 50px;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #aaaaaa;
+}
+
+/* ==================== Button Styling ==================== */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 4, 0, 0, 1);
+    -fx-transition: all 0.2s ease;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 2);
+    -fx-translate-y: -1px;
+}
+
+.button:pressed {
+    -fx-background-color: #1c6ea4;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 2, 0, 0, 0);
+    -fx-translate-y: 1px;
+}
+
+/* Action column button styling */
+.table-cell .button {
+    -fx-pref-width: 72px;
+    -fx-font-size: 11px;
+    -fx-padding: 5px 8px;
+    -fx-background-insets: 0;
+    -fx-effect: none;
+}
+
+/* Update button */
+/* Button Styling - Using classes instead of nth-child */
+.update-button, .first-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #3498db;
+    -fx-border-width: 1px;
+    -fx-text-fill: #3498db;
+}
+
+.update-button:hover, .first-button:hover {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Delete button */
+.delete-button, .second-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 1px;
+    -fx-text-fill: #e74c3c;
+}
+
+.delete-button:hover, .second-button:hover {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+/* ==================== HBox and VBox Styling ==================== */
+HBox {
+    -fx-spacing: 8px;
+    -fx-alignment: center;
+}
+
+VBox {
+    -fx-spacing: 15px;
+    -fx-alignment: center;
+}
+
+/* ==================== Dialog Styling ==================== */
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 5);
+}
+
+.dialog-pane > .header-panel {
+    -fx-padding: 20px 24px 15px 24px;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-background-color: linear-gradient(to right, #3498db, #2980b9);
+}
+
+.dialog-pane > .header-panel > .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+.dialog-pane > .content.label {
+    -fx-padding: 16px 24px;
+    -fx-wrap-text: true;
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+/* Style the dialog's grid */
+.dialog-pane .grid {
+    -fx-hgap: 12px;
+    -fx-vgap: 16px;
+    -fx-padding: 20px 24px 10px 24px;
+}
+
+.dialog-pane .grid .label {
+    -fx-text-fill: #505050;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Button bar styling */
+.dialog-pane > .button-bar {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 12px 24px;
+    -fx-background-radius: 0 0 8px 8px;
+    -fx-border-width: 1px 0 0 0;
+    -fx-border-color: #eeeeee;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-padding: 0;
+}
+
+/* Dialog buttons */
+.dialog-pane .button-bar .button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 100px;
+    -fx-padding: 8px 16px;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.dialog-pane .button-bar .button:default {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button-bar .button:default:hover {
+    -fx-background-color: #27ae60;
+}
+
+.dialog-pane .button-bar .button.cancel-button,
+.dialog-pane .button-bar .button:cancel {
+    -fx-background-color: transparent;
+    -fx-border-color: #95a5a6;
+    -fx-border-width: 1px;
+    -fx-text-fill: #7f8c8d;
+}
+
+.dialog-pane .button-bar .button.cancel-button:hover,
+.dialog-pane .button-bar .button:cancel:hover {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+}
+
+/* ==================== Form Controls Styling ==================== */
+.text-field, .password-field, .combo-box {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 13px;
+    -fx-pref-height: 36px;
+    -fx-prompt-text-fill: #adb5bd;
+}
+
+.text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #3498db;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 4, 0, 0, 0);
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #3498db;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 8px 12px;
+    -fx-background-color: white;
+    -fx-text-fill: #495057;
+}
+
+.combo-box-popup .list-cell:filled:selected,
+.combo-box-popup .list-cell:filled:hover {
+    -fx-background-color: #e1f0ff;
+    -fx-text-fill: #1c6ea4;
+}
+
+/* Custom style classes for update dialog form */
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #495057;
+}
+
+.form-container {
+    -fx-spacing: 16px;
+    -fx-padding: 20px;
+}

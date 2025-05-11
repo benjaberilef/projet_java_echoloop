@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.SignupController">
+    <center>
+        <VBox spacing="10" alignment="CENTER" styleClass="create-post">
+            <TextField fx:id="usernameField" promptText="Username" />
+            <PasswordField fx:id="passwordField" promptText="Password" />
+            <TextField fx:id="emailField" promptText="Email" />
+            <Button text="Sign Up" onAction="#handleSignup" styleClass="primary-btn" />
+            <Label fx:id="statusLabel" />
+            <Button text="Go to Login" onAction="#handleGoToLogin" styleClass="secondary-btn" />
+        </VBox>
+    </center>
+</BorderPane>

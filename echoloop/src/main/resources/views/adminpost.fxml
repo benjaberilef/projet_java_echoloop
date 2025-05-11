@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.AdminPostController"
+            stylesheets="@adminpostcss.css">
+
+    <!-- Combine navbar and header in a VBox -->
+    <top>
+        <VBox spacing="0">
+            <fx:include source="navbar.fxml"/>
+            <HBox styleClass="header-bar" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="15" right="20" bottom="15" left="20"/>
+                </padding>
+                <Label text="Admin Post Management" styleClass="page-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh" styleClass="refresh-btn"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: transparent;">
+            <content>
+                <VBox spacing="20">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <!-- Search and Filter Section -->
+                    <VBox spacing="10" styleClass="filter-section">
+                        <Label text="Filter Posts" styleClass="section-header"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="searchField" promptText="Search by content or username" HBox.hgrow="ALWAYS"/>
+                            <ComboBox fx:id="filterComboBox" promptText="Filter by status"/>
+                            <Button fx:id="searchButton" text="Search" onAction="#handleSearch" styleClass="primary-btn"/>
+                            <Button fx:id="clearButton" text="Clear" onAction="#handleClear" styleClass="secondary-btn"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Posts Table -->
+                    <TableView fx:id="postsTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="idColumn" text="ID" prefWidth="50"/>
+                            <TableColumn fx:id="userColumn" text="Username" prefWidth="100"/>
+                            <TableColumn fx:id="contentColumn" text="Content" prefWidth="300"/>
+                            <TableColumn fx:id="dateColumn" text="Posted Date" prefWidth="120"/>
+                            <TableColumn fx:id="hasImageColumn" text="Has Image" prefWidth="80"/>
+                            <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150"/>
+                        </columns>
+                    </TableView>
+
+                    <!-- Status and Statistics Section -->
+                    <HBox spacing="15" styleClass="stats-section">
+                        <Label fx:id="totalPostsLabel" text="Total Posts: 0"/>
+                        <Label fx:id="filteredPostsLabel" text="Showing: 0"/>
+                        <Label fx:id="statusLabel" textFill="green"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

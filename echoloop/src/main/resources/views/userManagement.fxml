@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.userManagementController">
+    <fx:include source="navbar.fxml"/>
+    <TableView fx:id="userTable">
+        <columns>
+            <TableColumn fx:id="usernameColumn" text="Username" />
+            <TableColumn fx:id="emailColumn" text="Email" />
+            <TableColumn fx:id="roleColumn" text="Role" />
+            <TableColumn fx:id="actionsColumn" text="Actions" />
+        </columns>
+    </TableView>
+
+    <HBox spacing="10" alignment="CENTER">
+    </HBox>
+</VBox>
